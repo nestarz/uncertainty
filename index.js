@@ -22,8 +22,9 @@ Vue.prototype.$Oscilloscope = Oscilloscope;
 const router = new VueRouter({
   routes: [
     { path: "/", component: httpVueLoader("./src/pages/home.vue") },
-    { path: "/monitor", component: httpVueLoader("./src/pages/monitor.vue") },
-    { path: "/monitor2", component: httpVueLoader("./src/pages/monitor2.vue") },
+    { path: "/chat", component: httpVueLoader("./src/pages/chat.vue") },
+    { path: "/monitor/social", component: httpVueLoader("./src/pages/monitor.vue") },
+    { path: "/monitor/emotions", component: httpVueLoader("./src/pages/monitor2.vue") },
     { path: "/about", component: httpVueLoader("./src/pages/about.vue") }
   ]
 });

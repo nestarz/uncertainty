@@ -2,8 +2,8 @@
   <div class="about">
     <div class="panel" ref="panel">
       <div id="#output" v-dragged class="output">
-        <video autoplay loop>
-          <source src="/assets/videos/output.mp4" type="video/mp4" />
+        <video autoplay loop controls>
+          <source src="/assets/videos/output1.mp4" type="video/mp4" />
         </video>
       </div>
       <div id="#categorie-what" v-dragged class="categorie">what</div>
@@ -212,7 +212,8 @@ module.exports = {
         chatbot1: { left: 105.223, top: 41.1106 },
         ev2: { left: 119.556, top: 38.3331 },
         office: { left: 63.8887, top: 52.9998 },
-        landmarks: { left: 93.3333, top: 44.2221 }
+        landmarks: { left: 93.3333, top: 44.2221 },
+        "#output": { left: 144.113, top: 17.1109 }
       },
       forceInitial: true,
       zoomRatio: 0.9
@@ -303,7 +304,11 @@ div {
 }
 
 .output {
-  width: 60em;
+  width: 50em;
+}
+
+.output video {
+  width: 50em;
 }
 
 .title {
