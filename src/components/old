@@ -1,0 +1,120 @@
+      this.botui.message
+        .add({
+          delay: DELAY_UNIT,
+          content: "You are online."
+        })
+        .then(res => {
+          return this.botui.message.bot({
+            delay: DELAY_UNIT,
+            content: `This will not be hold against you whatsoever.`
+          });
+        })
+        .then(res => {
+          this.audio = new Audio("/assets/audio/hold against you whatsoever.m4a");
+          this.audio.play().catch(console.error);
+          return this.botui.message.bot({
+            delay: this.audio.duration * 1000 + 1000,
+            content: `Tell me when you are ready.`
+          });
+        })
+        .then(res => {
+          this.audio = new Audio("/assets/audio/tell me ready.m4a");
+          this.audio.play().catch(console.error);
+          return this.botui.message.bot({
+            delay: this.audio.duration * 1000 + 1000,
+            content: `Accept the request.`
+          });
+        })
+        .then(res => {
+          this.audio = new Audio("/assets/audio/accept the request.m4a");
+          this.audio.play().catch(console.error);
+          return this.botui.message.bot({
+            delay: this.audio.duration * 1000 + 1000,
+            content: `describe video`
+          });
+        })
+        .then(res => {
+          this.audio = new Audio("/assets/audio/describe video.m4a");
+          this.audio.play().catch(console.error);
+          return this.botui.message.bot({
+            delay: this.audio.duration * 1000 + 1000,
+            content: `face the camera`
+          });
+        })
+        .then(res => {
+          this.audio = new Audio("/assets/audio/face the camera.m4a");
+          this.audio.play().catch(console.error);
+          return this.botui.message.bot({
+            delay: this.audio.duration * 1000 + 1000,
+            content: `Are you afraid of the answer ?`
+          });
+        })
+        // .then(res => {
+        //   return this.botui.message.bot({
+        //     delay: DELAY_UNIT,
+        //     content: "No",
+        //     human: true
+        //   });
+        // })
+        .then(res => {
+          return this.botui.action.text({
+            action: {
+              placeholder: "Enter your answer here"
+            }
+          });
+        })
+        .then(res => {
+          return this.botui.message.bot({
+            delay: DELAY_UNIT * 1.2,
+            content: `This experience is part of a new project aimed to prove behavorial hypotesis about criminology. It will not be hold against you whatsoever.`
+          });
+        })
+        .then(res => {
+          return this.botui.message.bot({
+            delay: DELAY_UNIT,
+            content: `Please, read carefuly the TERMS OF SETTLEMENT.`,
+            cssClass: "bold"
+          });
+        })
+        .then(res => {
+          return this.botui.message.bot({
+            delay: DELAY_UNIT * 2,
+            cssClass: "bold",
+            content: `​My participation will be declared in the national file of people who are suitable for research
+Biomedical. I will have a right of access and rectification with Dr. Damien LEGER,
+principal investigator of the study (Articles 56 and 57 of Law 2004-801 of 6 August 2004).`
+          });
+        })
+        .then(res => {
+          return this.botui.message.bot({
+            delay: DELAY_UNIT,
+            content: "Done",
+            human: true
+          });
+        })
+        .then(res => {
+          return this.botui.message.bot({
+            delay: DELAY_UNIT,
+            content: `As a first step of this experiment, I will ask you to see the video entirely. 
+            You will have to describe and synthetize it in less than 150 words afterward.`
+          });
+        })
+        .then(res => {
+          return this.botui.message.bot({
+            delay: DELAY_UNIT,
+            content: `Tell me when you are ready.`
+          });
+        })
+        .then(res => {
+          return this.botui.message.bot({
+            delay: DELAY_UNIT,
+            content: "I am ready",
+            human: true
+          });
+        })
+        .then(res => {
+          return this.botui.message.bot({
+            delay: DELAY_UNIT,
+            content: `It will start in a few seconds.`
+          });
+        });
